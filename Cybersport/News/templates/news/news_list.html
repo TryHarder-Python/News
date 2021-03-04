@@ -1,0 +1,25 @@
+{% extends 'news/base.html' %}
+{% block content %}
+
+</div>
+    </div>
+  </nav>
+<div class="container mt-3">
+    <h1>{{ title2 }}</h1>
+    {% for item in news %}
+    <div class="card mb-3">
+        <div class="card-header">
+            {{ item.category }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{ item.title }}</h5>
+            <p class="card-text">{{ item.quote }}</p>
+            <a href="{% url 'news_detail' item.slug %}" class="btn btn-primary">Поподробнее по новости</a>
+        </div>
+        <div class="card-footer text-muted">
+            {{ item.create_date }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
