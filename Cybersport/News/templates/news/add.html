@@ -1,0 +1,9 @@
+{% extends 'base/base.html' %}
+
+{% block title %}<title>Добавление новости</title>{% endblock %}
+{% block content %}
+<form action="{% url 'news_add' %}" method="post">
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary btn-block">Добавить новость</button>
+</form>
+{% endblock %}
